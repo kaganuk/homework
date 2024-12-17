@@ -39,11 +39,11 @@ class ArticleController
     { ok: false }
   end
 
-  def delete_article(_id)
-    delete_count = Article.delete(:id => id)
+  def delete_article(id)
+    delete_count = Article.delete(id)
 
     if delete_count == 0
-      { ok: true }
+      { ok: false }
     else
       { ok: true, delete_count: delete_count }
     end
